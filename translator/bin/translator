@@ -1,0 +1,20 @@
+#!/usr/bin/env php
+<?php
+
+require dirname(__DIR__) . '/src/EnglishDictionary.php';
+require dirname(__DIR__) . '/src/Translator.php';
+echo 'Concole Quick Translator', PHP_EOL;
+
+if (!isset($argv[1])) {
+    echo "Usage: $argv[0] [word]\n";
+    exit(1);
+}
+
+$translator = new Translator(new EnglishDictionary());
+
+try {
+    echo $translator->translate(array_slice($argv, 1)), PHP_EOL;
+} catch(RuntimeException $e) {
+    echo "\033[1;31;1;43m ERROR: \033[0m", $e->getMessage(), PHP_EOL;
+    exit(2);
+}
