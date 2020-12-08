@@ -9,8 +9,8 @@ return [
             'action' => 'index',
         ],
         'post' => [
-            'controller' => 'CalculateController',
-            'action' => 'calculate',
+            'controller' => 'ConverterController',
+            'action' => 'converter',
         ],
     ],
 ];

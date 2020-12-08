@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
-use App\DomainModel\Factory;
 use App\Http\Request;
 use App\Http\Response;
 use App\View\View;
@@ -22,11 +21,8 @@ class HomeController extends BaseController
      */
     public function index(Request $request): Response
     {
-        
-        return new Response($this->render('form.php', [
-            '{greeting}' => $greeting->getGreeting($name),
-            '{flag}' => $greeting->getFlagImage(),
-            ]));
+
+        return new Response($this->render('form.tpl'));
     }
 
 }
