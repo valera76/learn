@@ -10,7 +10,7 @@ namespace App\DomainModel;
  */
 class Acronym
 {
-    public function makeAcronym(string $phrase)
+    public function makeAcronym(string $phrase): string
     {
         $chars = [
         '.',
